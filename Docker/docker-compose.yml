@@ -1,0 +1,34 @@
+version: '3'
+services:
+  proxyC:
+    image: jwilder/nginx-proxy
+    container_name: proxyC
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    restart: always
+    privileged: true
+    networks:
+      - local_containers      
+  findex:
+    image: richarvey/nginx-php-fpm:2.1.2
+    container_name: findex
+    dns:
+      - 8.8.8.8    
+    volumes:
+      - ../.:/var/www/html
+      - ./default.conf:/etc/nginx/sites-available/default.conf
+    environment:
+      - SKIP_COMPOSER=1
+      - VIRTUAL_HOST=findex.test
+    networks:
+      - local_containers
+    restart: always
+    command: bash -c 'apk add --update nodejs npm && /start.sh'
+    depends_on:
+      - proxyC
+networks:
+  local_containers:
+    name: local_containers
