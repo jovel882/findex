@@ -1,66 +1,341 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<br/>
+<br/>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# :mount_fuji: Reto Técnico Findex.
 
-## About Laravel
+<br/>
+<br/>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## :bookmark_tabs: Tabla de contenido.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<br/>
+<br/>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1. [Autor.](#black_nib-autor)
 
-## Learning Laravel
+<br/>
+<br/>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+2. [Detalle de la solución.](#triangular_ruler-detalle-de-la-solución)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+<br/>
+<br/>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+3. [Desplegar.](#airplane-desplegar)
 
-## Laravel Sponsors
+<br/>
+<br/>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## :black_nib: Autor.
 
-### Premium Partners
+<br/>
+<br/>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+**John Fredy Velasco Bareño** [jovel882@gmail.com](mailto:jovel882@gmail.com)
 
-## Contributing
+## :triangular_ruler: Detalle de la solución.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<br/>
+<br/>
 
-## Code of Conduct
+- Esta desarrollado con:
+    <br/>
+    <br/>
+    - PHP 8.1
+        <br/>
+        <br/>
+    - Laravel 10.8
+        <br/>
+        <br/>
+    - Laravel Nova 4
+        <br/>
+        <br/>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+<br/>
+<br/>
 
-## Security Vulnerabilities
+Se desarrollo basado en los requerimientos descritos en este [enlace](https://docs.google.com/forms/d/e/1FAIpQLSf8xQeJs6uZOgw8HnwgcyAIdDrIT6gkXPoXCgzCvcR6X4PY4g/viewform) y se consiguió lo siguiente:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<br/>
+<br/>
 
-## License
++ Se implamento el manejo de SQLite y se dejo el archivo cargando en el repo con data precargada como se indicaba en os requerimientos en [database.sqlite](database/database.sqlite). 
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<br/>
+<br/>
+
++ Se precargo la BD atraves del seeder general con 10 usuarios usando el factory de User con datos provistos por faker, ademas de un usuario `test@example.com` y contraseña `123456789`, cuaquier usuario puede usarse para acceder al Nova.
+
+<br/>
+<br/>
+
++ Se instalo Laravel Nova.
+
+<br/>
+<br/>
+
++ Se opto por desarrollar el reto del onboarding de tres pasos usando [vue-onboarding](https://github.com/fatihsolhan/v-onboarding).
+
+	<br/>
+	<br/>
+
+	+ Se creo un Tool con el componente que hace el onboarding, este consume un endpoint usando los Nova-Request y las promesas para esperar la respuesta. El entopoint esta dentro del API expuesto en el Tool que le retorna los 3 textos estaticos en un json para que el componente los renderice en el onboarding.
+
+		<br/>
+		<br/>
+
+		![Login.jpg](public/img/Login.jpg)
+
+		<br/>
+		<br/>
+
+		> Para acceder al Laravel Nova ingrese a **http://{DNS}/login/** donde **DNS** se debe cambiar por el de la solucion. Ej. [http://findex.test/login/](http://findex.test/login/)
+
+		<br/>
+		<br/>
+
+		![Tool.jpg](public/img/Tool.jpg)
+
+		<br/>
+		<br/>
+
+		> Para acceder al Tool ingrese a **http://{DNS}/onboarding/** donde **DNS** se debe cambiar por el de la solucion. Ej. [http://findex.test/onboarding/](http://findex.test/onboarding/)
+
+		<br/>
+		<br/>
+
+		![ToolError.jpg](public/img/ToolError.jpg)
+
+		<br/>
+		<br/>
+
+		> Si existe algun problema conectando con el API para traer los textos vera este mensaje.
+
+		<br/>
+		<br/>
+
+	+ Se creo un Card que usa el componente generado con el Tool, luego este Card se introdujo dentro del Resource de User para poder tener el Onboarding.
+
+		<br/>
+		<br/>
+
+		![Card.jpg](public/img/Card.jpg)
+
+		<br/>
+		<br/>
+
+		> Para acceder al Resource de User con el Card ingrese a **http://{DNS}/resources/users/** donde **DNS** se debe cambiar por el de la solucion. Ej. [http://findex.test/resources/users/](http://findex.test/resources/users/)
+
+		<br/>
+		<br/>
+
+		+ Paso 1.
+
+		<br/>
+		<br/>
+
+		![onboarding1.jpg](public/img/onboarding1.jpg)
+
+		<br/>
+		<br/>
+
+		+ Paso 2.
+
+		<br/>
+		<br/>
+
+		![onboarding2.jpg](public/img/onboarding2.jpg)
+
+		<br/>
+		<br/>
+
+		+ Paso 3.
+
+		<br/>
+		<br/>
+
+		![onboarding3.jpg](public/img/onboarding3.jpg)
+
+<br/>
+<br/>
+
+## :airplane: Desplegar.
+
+<br/>
+<br/>
+
++ Prerrequisitos
+
+    <br/>
+    <br/>
+
+    + **Docker >= 20.\***
+
+    <br/>
+    <br/>
+
+    + **Docker Compose >=2.\***
+
+    <br/>
+    <br/>
+
+    + **Git >=2.\***
+
+    <br/>
+    <br/>
+
++ Pasos
+
+    <br/>
+    <br/>
+
+    > :bulb: Si esta sobre algún sistema basado en Linux y ejecuta la siguiente línea se iniciará un ambiente totalmente funcional sobre el DNS [findex.test](http://findex.test/).<br/><br/>
+	Antes de ejecutar el comando recuerde cambiar los valores de `USER_NAME_REMPLACE` por el nombre de usuario de key del Laravel Nova y `LICENSE_KEY_REMPLACE` por la Key con la licencia del Laravel Nova.
+
+    <br/>
+    <br/>
+
+    ```sh
+
+    git clone https://github.com/jovel882/findex.git && cd findex && cp Docker/.env.example Docker/.env && sed -i -r 's/^(NOVA_USERNAME=).*/\1"USER_NAME_REMPLACE"/' "Docker/.env" && sed -i -r 's/^(NOVA_LICENSE_KEY=).*/\1"LICENSE_KEY_REMPLACE"/' "Docker/.env" && docker compose -f Docker/docker-compose.yml up -d && docker logs -f findex
+
+    ```
+
+    <br/>
+    <br/>
+
+    <br/>
+    <br/>	
+
+    + Clone el repositorio
+
+        <br/>
+        <br/>
+
+        ```sh
+
+        git clone https://github.com/jovel882/findex.git
+
+        ```
+
+        <br/>
+        <br/>
+
+    + Ingrese al folder del proyecto.
+
+        <br/>
+        <br/>
+
+        ```sh
+
+        cd findex
+
+        ```
+
+        <br/>
+        <br/>
+            
+    + Cree los archivos de entorno basados en los de ejemplo.
+
+        <br/>
+        <br/>
+
+        + Genere el ***.env*** dentro del folder de **Docker**, estas son las variables disponibles.
+
+			<br/>
+			<br/>
+
+			```sh
+
+			cp Docker/.env.example Docker/.env
+
+			```
+
+			<br/>
+			<br/>
+			
+			+ `COMPOSE_PROJECT_NAME` (\*Requerido): Define el nombre del proyecto que se genera con Docker Compose, en el de ejemplo se deja **findex**.
+
+			<br/>
+			<br/>
+			
+			+ `NOVA_USERNAME` (\*Requerido): Define el nombre de usuario de key del Laravel Nova.
+
+			<br/>
+			<br/>
+			
+			+ `NOVA_LICENSE_KEY` (\*Requerido): Define la Key con la licencia del Laravel Nova.
+
+			<br/>
+			<br/>
+
+    + Variables dentro del archivo **"docker-compose.yml"**.
+
+        <br/>
+        <br/>
+
+        + Dentro del servicio de nombre **"findex"** en la sección de **"environment"**
+
+            <br/>
+            <br/>
+
+            + `VIRTUAL_HOST` (\*Requerido): Define el nombre del DNS sobre el que se levantara el ambiente, por defecto esta **findex.test**.
+                
+            <br/>
+            <br/>
+
+    + Ejecute el docker-compose.yml para levantar el ambiente.
+    
+        <br/>
+        <br/>
+
+        ```sh
+
+        docker compose -f Docker/docker-compose.yml up -d
+
+        ```
+
+        <br/>
+        <br/>
+
+    + Siga el estado del despliegue del contenedor principal con el siguiente comando.
+
+        <br/>
+        <br/>
+
+        ```sh
+
+        docker logs -f findex
+
+        ```
+        <br/>
+        <br/>
+
+        > :pushpin: En este log si todo esta correcto podrá ver la instalación de paquetes con Composer, instalación de paquetes con NPM, compilado de archivos con NPM, publicacion de recurso necesarios para Laravel Nova y finalmente el inicio de los servicios del servidor web con Supervisor entre otros.
+
+        <br/>
+        <br/>
+
+    + Agregue un registro de host para redirigir las peticiones al **DNS** que se definió en **VIRTUAL_HOST** del archivo **"docker-compose.yml"**. En este [enlace](https://www.siteground.es/kb/archivo-hosts/) hay una forma de hacerlo dependiendo su OS.
+
+
+		<br/>
+		<br/>
+		
+		**Ejemplo:**	
+
+		<br/>
+		<br/>
+
+        ```sh
+
+        127.0.0.1 findex.test
+
+        ```
+    <br/>
+    <br/>
+
+    + Acceda al resultado de la solución **http://{DNS}/login** donde **DNS** se debe cambiar por el que se definió en **VIRTUAL_HOST** del archivo **"docker-compose.yml"**. Ej. [http://findex.test/login](http://findex.test/login)
+
+    <br/>
+    <br/>

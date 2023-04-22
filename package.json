@@ -2,11 +2,18 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "build-onboarding": "cd nova-components/Onboarding && npm run dev",
+        "build-onboarding-prod": "cd nova-components/Onboarding && npm run prod",
+        "build-onboarding-card": "cd nova-components/OnboardingCard && npm run dev",
+        "build-onboarding-card-prod": "cd nova-components/OnboardingCard && npm run prod"
     },
     "devDependencies": {
         "axios": "^1.1.2",
         "laravel-vite-plugin": "^0.7.2",
         "vite": "^4.0.0"
+    },
+    "dependencies": {
+        "v-onboarding": "^2.3.1"
     }
 }

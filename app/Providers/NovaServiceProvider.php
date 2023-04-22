@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Findex\Onboarding\Onboarding;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
@@ -66,7 +67,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function tools()
     {
-        return [];
+        return [
+            new Onboarding
+        ];
     }
 
     /**

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "26532280deb09101d24eb65747d6c706",
+    "content-hash": "b1b45baac9f1f52a38fdbe6796083e29",
     "packages": [
         {
             "name": "brick/math",
@@ -828,6 +828,78 @@
                 }
             ],
             "time": "2023-01-14T14:17:03+00:00"
+        },
+        {
+            "name": "findex/onboarding",
+            "version": "dev-feature/nova",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/Onboarding",
+                "reference": "fe6e708a6dc09f2a4411e53487e21275284c1e62"
+            },
+            "require": {
+                "php": "^7.3|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Findex\\Onboarding\\ToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Findex\\Onboarding\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova tool.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "findex/onboarding-card",
+            "version": "dev-feature/nova",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/OnboardingCard",
+                "reference": "830ef42a2fd8237dea498134e746295f97c61ca3"
+            },
+            "require": {
+                "php": "^7.3|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Findex\\OnboardingCard\\CardServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Findex\\OnboardingCard\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova card.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "fruitcake/php-cors",
@@ -7382,16 +7454,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.1.1",
+            "version": "10.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "0d9401b7e8245d71079e249e3cb868e9d2337887"
+                "reference": "6f0cd95be71add539f8fd2be25b2a4a29789000b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/0d9401b7e8245d71079e249e3cb868e9d2337887",
-                "reference": "0d9401b7e8245d71079e249e3cb868e9d2337887",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/6f0cd95be71add539f8fd2be25b2a4a29789000b",
+                "reference": "6f0cd95be71add539f8fd2be25b2a4a29789000b",
                 "shasum": ""
             },
             "require": {
@@ -7463,7 +7535,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.1.1"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.1.2"
             },
             "funding": [
                 {
@@ -7479,7 +7551,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-04-17T12:17:05+00:00"
+            "time": "2023-04-22T07:38:19+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -8824,7 +8896,10 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "findex/onboarding": 20,
+        "findex/onboarding-card": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
