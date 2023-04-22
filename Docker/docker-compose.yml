@@ -20,6 +20,8 @@ services:
     volumes:
       - ../.:/var/www/html
       - ./default.conf:/etc/nginx/sites-available/default.conf
+    env_file:
+      - .env
     environment:
       - SKIP_COMPOSER=1
       - VIRTUAL_HOST=findex.test
