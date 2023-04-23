@@ -20,13 +20,15 @@ services:
     volumes:
       - ../.:/var/www/html
       - ./default.conf:/etc/nginx/sites-available/default.conf
+    env_file:
+      - .env
     environment:
       - SKIP_COMPOSER=1
       - VIRTUAL_HOST=findex.test
     networks:
       - local_containers
     restart: always
-    command: bash -c 'apk add --update nodejs npm && /start.sh'
+    command: bash -c 'apk add --update nodejs npm && cp .env.example .env && composer config http-basic.nova.laravel.com ${NOVA_USERNAME} ${NOVA_LICENSE_KEY} && composer install && php artisan key:generate && npm install && npm run build && php artisan nova:publish && /start.sh'
     depends_on:
       - proxyC
 networks:
